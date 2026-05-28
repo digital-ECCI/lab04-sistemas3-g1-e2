@@ -1,0 +1,149 @@
+[
+    {
+        "id": "a8e829d3f49ab09f",
+        "type": "tab",
+        "label": "Flujo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "25901bfa9174aa5a",
+        "type": "function",
+        "z": "a8e829d3f49ab09f",
+        "name": "function 1",
+        "func": "let hex = msg.payload.replace('#','');\n\nlet r = parseInt(hex.substring(0,2), 16);\nlet g = parseInt(hex.substring(2,4), 16);\nlet b = parseInt(hex.substring(4,6), 16);\n\n// Convertir a texto\nmsg.payload = \"RGB(\" + r + \", \" + g + \", \" + b + \")\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 240,
+        "wires": [
+            [
+                "ef8e2b769db37bf0",
+                "7336225c147c5968"
+            ]
+        ]
+    },
+    {
+        "id": "82f6262f5aa87427",
+        "type": "debug",
+        "z": "a8e829d3f49ab09f",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "7336225c147c5968",
+        "type": "file",
+        "z": "a8e829d3f49ab09f",
+        "name": "",
+        "filename": "/home/juan/rgb.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 690,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ef8e2b769db37bf0",
+        "type": "ui_text_input",
+        "z": "a8e829d3f49ab09f",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "group": "58cdd0b1db3f504e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 660,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "78e7b7883b45bbab",
+        "type": "ui_colour_picker",
+        "z": "a8e829d3f49ab09f",
+        "name": "",
+        "label": "",
+        "group": "58cdd0b1db3f504e",
+        "format": "hex",
+        "outformat": "string",
+        "showSwatch": true,
+        "showPicker": false,
+        "showValue": false,
+        "showHue": false,
+        "showAlpha": false,
+        "showLightness": true,
+        "square": "false",
+        "dynOutput": "false",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 230,
+        "y": 80,
+        "wires": [
+            [
+                "82f6262f5aa87427",
+                "25901bfa9174aa5a"
+            ]
+        ]
+    },
+    {
+        "id": "58cdd0b1db3f504e",
+        "type": "ui_group",
+        "name": "COLOR",
+        "tab": "eef30836a2c89779",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "eef30836a2c89779",
+        "type": "ui_tab",
+        "name": "Tab",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "0f7e379701391a86",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]
