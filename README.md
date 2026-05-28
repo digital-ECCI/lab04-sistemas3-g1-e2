@@ -7,6 +7,7 @@
 * [Juan Camilo Yepes](https://github.com/JuanCY99)
 * [Cristian Javier Romero ](https://github.com/crisr2215)
 * [Kevin Mejia Montenegro](https://github.com/coronavirus-ux)
+* [Mateo Ortega](https://github.com/mateoaortegac-jpg)
 
 ## Documentación
 
